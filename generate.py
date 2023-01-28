@@ -41,15 +41,15 @@ def Create_Robot():
         pyrosim.Start_URDF("body.urdf")
 
          #toso
-        pyrosim.Send_Cube(name="Torso", pos=[.5, 0, .5], size=[length, width, height])
-
+        
+        pyrosim.Send_Cube(name="BackLeg", pos=[.5, 0, .5], size=[length, width, height])
        
         # # # #link between leg and torso   
         pyrosim.Send_Joint( name = "BackLeg_Torso" , parent= "BackLeg" , child = "Torso" , type = "revolute", position = [1,0,1]) 
 
          # #  #back leg
-        pyrosim.Send_Cube(name="BackLeg", pos=[.5, 0, .5], size=[length, width, height])
-
+        
+        pyrosim.Send_Cube(name="Torso", pos=[.5, 0, .5], size=[length, width, height])
  
        
         # # #link to front leg and torso
